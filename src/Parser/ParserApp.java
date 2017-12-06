@@ -27,7 +27,7 @@ public class ParserApp {
         Matcher matcher = numberBracket.matcher(str);
         Boolean find = matcher.find();
         if (find)
-            System.out.println("В строке есть неккорекная часть, но она будет исправлена автоматически:");
+            System.out.println("В строке есть некорректная часть, но она будет исправлена автоматически:");
         while (find){
             String number = str.substring(matcher.start(),matcher.end()-1);
             str = matcher.replaceFirst(number+"+0)");

@@ -18,6 +18,7 @@ public class Calculator {
         // str = "(102-31)/82*54";
         //str = "((10-10)*(32-1))/45";
         str = "(1+(2+(3+(4+(5+(6+(7+(8+(9)))))))))";
+        str = str.replace("+","*");
         //str = "(1+2+(3)+(6)+4)";
         List<Element> elementList = new LinkedList<>(); //список элементов
         if (ParserApp.parser(str,elementList)){
