@@ -23,6 +23,20 @@ public class ParserApp {
             str = str.replaceFirst("-","0-");
         str = str.replaceAll("\\(-","(0-");
 
+        Pattern numberBracket = Pattern.compile("\\([0-9]*\\.?\\)");
+        Matcher matcher = numberBracket.matcher(str);
+        Boolean find = matcher.find();
+        if (find)
+            System.out.println("В строке есть неккорекная часть, но она будет исправлена автоматически:");
+        while (find){
+            String number = str.substring(matcher.start(),matcher.end()-1);
+            str = matcher.replaceFirst(number+"+0)");
+            System.out.println(str);
+            matcher = numberBracket.matcher(str);
+            find = matcher.find();
+        }
+
+
         while (true){
             //начинается с числа
             Pattern patternNumber = Pattern.compile("^[\"\\d\"]+");
